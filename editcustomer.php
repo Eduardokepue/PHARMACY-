@@ -6,7 +6,7 @@
 	$result->execute();
 	for($i=0; $row = $result->fetch(); $i++){
 ?>
-<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../style.css" media="screen" rel="stylesheet" type="text/css" />
 <form action="saveeditcustomer.php" method="post">
 <center><h4><i class="icon-edit icon-large"></i> Edit Customer</h4></center>
 <hr>

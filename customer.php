@@ -21,7 +21,7 @@ Pharmcare
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 
 
-<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../style.css" media="screen" rel="stylesheet" type="text/css" />
 <!--sa poip up-->
 <script src="jeffartagame.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/application.js" type="text/javascript" charset="utf-8"></script>
@@ -102,15 +102,15 @@ $finalcode='RS-'.createRandomPassword();
 	<div class="span2">
           <div class="well sidebar-nav">
               <ul class="nav nav-list">
-              <li><a href="customer.php"><i class="icon-dashboard icon-2x"></i> Dashboard  </a></li> 
-			  <li class="active"><a href="customer.php"><i class="icon-group icon-2x"></i> Customers </a>  </li>
-			             
+              <li><a href="admin.php"><i class="icon-dashboard icon-2x"></i> Dashboard  </a></li> 
+			  <li><a href="staff.php"><i class="icon-group icon-2x"></i> Users</a> 
+			<li><a href="sales.php?id=cash&invoice=<?php echo $finalcode ?>"><i class="icon-shopping-cart icon-2x"></i> Sales </a>  </li>             
 			<li><a href="products.php"><i class="icon-list-alt icon-2x"></i> Products</a>                                     </li>
-			                                  
+			<li class="active"><a href="customer.php"><i class="icon-group icon-2x"></i> Customers </a>                                    </li>
 			<li><a href="supplier.php"><i class="icon-group icon-2x"></i> Manufacturer</a> 
 			                                   </li>
 			  <li><a href="sales_inventory.php"><i class="icon-table icon-2x"></i> Product Inventory</a> 								   
-			
+			<li><a href="salesreport.php?d1=0&d2=0"><i class="icon-bar-chart icon-2x"></i> Sales Report</a>                </li>
 					<br><br><br><br><br><br>		
 			<li>
 			 <div class="hero-unit-clock">
@@ -130,14 +130,14 @@ $finalcode='RS-'.createRandomPassword();
 			<i class="icon-group"></i> Customers
 			</div>
 			<ul class="breadcrumb">
-			<li><a href="customer.php">Dashboard</a></li> /
+			<li><a href="admin.php">Dashboard</a></li> /
 			<li class="active">Customers</li>
 			</ul>
 
 <div style="margin-top: -19px; margin-bottom: 21px;">
-<a  href="customer.php"><button class="btn btn-default btn-large" style="float: left;"><i class="icon icon-circle-arrow-left icon-large"></i> Back</button></a>
+<a  href="admin.php"><button class="btn btn-default btn-large" style="float: left;"><i class="icon icon-circle-arrow-left icon-large"></i> Back</button></a>
 <?php 
-			include('connect_db.php');
+			require_once('connect_db.php');
 				$result = $dbh->prepare("SELECT * FROM customer ORDER BY customer_id DESC");
 				$result->execute();
 				$rowcount = $result->rowcount();
@@ -165,7 +165,7 @@ $finalcode='RS-'.createRandomPassword();
 	<tbody>
 		
 			<?php
-				include('connect_db.php');
+				require_once('connect_db.php');
 				$result = $dbh->prepare("SELECT * FROM customer ORDER BY customer_id DESC");
 				$result->execute();
 				for($i=0; $row = $result->fetch(); $i++){
