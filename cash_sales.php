@@ -133,7 +133,7 @@ $finalcode='RS-'.createRandomPassword();
 <div style="margin-top: -19px; margin-bottom: 21px;">
 <a  href="cash_sales.php"><button class="btn btn-default btn-large" style="float: left;"><i class="icon icon-circle-arrow-left icon-large"></i> Back</button></a>
 <?php 
-			include('connect_db.php');
+			require_once('connect_db.php');
 				$result = $dbh->prepare("SELECT * FROM customer ORDER BY customer_id DESC");
 				$result->execute();
 				$rowcount = $result->rowcount();
@@ -161,7 +161,7 @@ $finalcode='RS-'.createRandomPassword();
 	<tbody>
 		
 			<?php
-				include('connect_db.php');
+				require_once('connect_db.php');
 				$result = $dbh->prepare("SELECT * FROM customer ORDER BY customer_id DESC");
 				$result->execute();
 				for($i=0; $row = $result->fetch(); $i++){

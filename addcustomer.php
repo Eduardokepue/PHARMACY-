@@ -1,4 +1,4 @@
-<link href="../style.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
 <form action="savecustomer.php" method="post">
 <center><h4><i class="icon-plus-sign icon-large"></i> Add Customer</h4></center>
 <hr>

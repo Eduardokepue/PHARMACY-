@@ -136,7 +136,7 @@ window.onload=startclock;
 <div style="margin-top: -19px; margin-bottom: 21px;">
 <a  href="customer.php"><button class="btn btn-default btn-large" style="float: left;"><i class="icon icon-circle-arrow-left icon-large"></i> Back</button></a>
 <?php 
-			include('connect_db.php');
+			require_once('connect_db.php');
 				$result = $dbh->prepare("SELECT * FROM supliers ORDER BY manufact_id DESC");
 				$result->execute();
 				$rowcount = $result->rowcount();
@@ -163,7 +163,7 @@ window.onload=startclock;
 	<tbody>
 		
 			<?php
-				include('connect_db.php');
+				require_once('connect_db.php');
 				$result = $dbh->prepare("SELECT * FROM supliers ORDER BY manufact_id DESC");
 				$result->execute();
 				for($i=0; $row = $result->fetch(); $i++){

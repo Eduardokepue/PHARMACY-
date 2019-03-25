@@ -173,7 +173,7 @@ window.onload=startclock;
 			?>
 			
 			<?php 
-			include ('connect_db.php');
+			require_once('connect_db.php');
 				$result = $dbh->prepare("SELECT * FROM products where qty < 10 ORDER BY product_id DESC");
 				$result->execute();
 				$rowcount123 = $result->rowcount();
@@ -227,7 +227,7 @@ window.onload=startclock;
 					}
 					return $number;
 				}
-				include('connect_db.php');
+				require_once('connect_db.php');
 				$result = $dbh->prepare("SELECT *, price * qty as total FROM products ORDER BY product_id DESC");
 				$result->execute();
 				for($i=0; $row = $result->fetch(); $i++){
