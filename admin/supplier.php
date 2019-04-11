@@ -94,7 +94,7 @@ window.onload=startclock;
 // End -->
 </SCRIPT>
 <body>
-<?php include('navfixed.php');?>
+
 <div class="container-fluid">
       <div class="row-fluid">
 	<div class="span2">

@@ -96,7 +96,7 @@ function createRandomPassword() {
 $finalcode='RS-'.createRandomPassword();
 ?>
 <body>
-<?php include('navfixed.php');?>
+
 <div class="container-fluid">
       <div class="row-fluid">
 	<div class="span2">

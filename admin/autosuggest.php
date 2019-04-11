@@ -1,5 +1,5 @@
 <?php
-   $db = new mysqli('localhost', 'root' ,'tomkin254', 'sales');
+   $db = new mysqli('localhost', 'root' ,'', 'pharmcare');
 	if(!$db) {
 	
 		echo 'Could not connect to the database.';

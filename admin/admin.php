@@ -1,10 +1,10 @@
 <?php 
-session_start();
-require_once('connect_db.php');
-include("login.php"); 
+//session_start();
+//require_once('connect_db.php');
+require_once('login.php'); 
 if(strlen($_SESSION['alogin'])==0)
 {
-	header("location: index.php");
+	header("location:index.php");
 }else{
 ?>
 <!DOCTYPE html>
@@ -94,7 +94,8 @@ window.onload=startclock;
 </SCRIPT>	
 </head>
 <body>
-<?php include('navfixed.php');?>
+
+<?php require_once('navfixed.php');?>
 	
 	
 	<div class="container-fluid">

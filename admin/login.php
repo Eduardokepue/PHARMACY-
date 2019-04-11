@@ -3,8 +3,8 @@ session_start();
 include('connect_db.php');
 if(isset($_POST['submit']))
 {
-$uname=$_POST['username'];
-$password=md5($_POST['password']);
+$username=$_POST['username'];
+$password=$_POST['password'];
 $sql ="SELECT username,password FROM user WHERE username=:username and password=:password and position='admin'";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':username', $username, PDO::PARAM_STR);
@@ -20,10 +20,6 @@ echo "<script type='text/javascript'> document.location = 'admin.php'; </script>
 
     echo "<script>alert('Invalid Details');</script>";
     echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
-    
-
+ }
 }
-
-}
-
-?>
+ ?>   

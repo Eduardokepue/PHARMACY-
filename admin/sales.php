@@ -103,7 +103,7 @@ function createRandomPassword() {
 $finalcode='RS-'.createRandomPassword();
 ?>
 <body>
-<?php include('navfixed.php');?>
+
 	
 
 
@@ -166,7 +166,7 @@ $finalcode='RS-'.createRandomPassword();
 <input type="number" name="qty" value="1" min="1" placeholder="Qty" autocomplete="off" style="width: 68px; height:30px; padding-top:6px; padding-bottom: 4px; margin-right: 4px; font-size:15px;" / required>
 <input type="hidden" name="discount" value="" autocomplete="off" style="width: 68px; height:30px; padding-top:6px; padding-bottom: 4px; margin-right: 4px; font-size:15px;" />
 <input type="hidden" name="date" value="<?php echo date("m/d/y"); ?>" />
-<Button type="submit" class="btn btn-info" style="width: 123px; height:35px; margin-top:-5px;" /><i class="icon-plus-sign icon-large"></i> Add</button>
+<Button type="submit" class="btn btn-info" style="width: 123px; height:35px; margin-top:-5px;" /><i class="icon-plus-sign icon-large"></i> Add</Button>
 </form>
 <table class="table table-bordered" id="resultTable" data-responsive="table">
 	<thead>
