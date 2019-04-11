@@ -96,14 +96,13 @@ function createRandomPassword() {
 		$pass = $pass . $tmp;
 
 		$i++;
-
 	}
 	return $pass;
 }
 $finalcode='RS-'.createRandomPassword();
 ?>
 <body>
-<?php include('navfixed.php');?>
+<?php require_once('navfixed.php');?>
 	
 
 
@@ -146,13 +145,13 @@ $finalcode='RS-'.createRandomPassword();
 <select name="product" style="width:650px; "class="chzn-select" required>
 <option></option>
 	<?php
-	include('connect_db.php');
+	require_once('connect_db.php');
 	$result = $dbh->prepare("SELECT * FROM products");
 		$result->bindParam(':userid', $res);
 		$result->execute();
 		for($i=0; $row = $result->fetch(); $i++){
 	?>
-		<option value="<?php echo $row['product_id'];?>"><?php echo $row['product_code']; ?> - <?php echo $row['gen_name']; ?> - <?php echo $row['product_name']; ?> | Expires at: <?php echo $row['expiry_date']; ?></option>
+		<option value="<?php echo $row['product_id'];?>"><?php echo $row['product_code']; ?> - <?php echo $row['chem_name']; ?> - <?php echo $row['product_name']; ?> | Expires at: <?php echo $row['expiry_date']; ?></option>
 	<?php
 				}
 			?>
@@ -179,7 +178,7 @@ $finalcode='RS-'.createRandomPassword();
 		
 			<?php
 				$id=$_GET['invoice'];
-				include('connect_db.php');
+				require_once('connect_db.php');
 				$result = $dbh->prepare("SELECT * FROM sales_order WHERE invoice= :userid");
 				$result->bindParam(':userid', $id);
 				$result->execute();
